@@ -41,39 +41,3 @@ exports.CheckIn = (req, res) => {
 
 
 
-exports.CheckOut = (req, res) => {
-  const { id: userId, nama: userName } = req.user;
-  const waktuSekarang = new Date();
-  const recordToUpdate = presensiRecords.find(
-    (record) => record.userId === userId && record.checkOut === null
-  );
-
-  if (!recordToUpdate) {
-    return res.status(404).json({
-      message: "Tidak ditemukan catatan check-in yang aktif untuk Anda.",
-    });
-  }
-  recordToUpdate.checkOut = waktuSekarang;
-  const formattedData = {
-    ...recordToUpdate,
-    checkIn: format(recordToUpdate.checkIn, "yyyy-MM-dd HH:mm:ssXXX", {
-      timeZone,
-    }),
-    checkOut: format(recordToUpdate.checkOut, "yyyy-MM-dd HH:mm:ssXXX", {
-      timeZone,
-    }),
-  };
-
-  console.log(
-    `DATA TERUPDATE: Karyawan ${userName} (ID: ${userId}) melakukan check-out.`
-  );
-
-  res.json({
-    message: `Selamat jalan ${userName}, check-out Anda berhasil pada pukul ${format(
-      waktuSekarang,
-      "HH:mm:ss",
-      { timeZone }
-    )} WIB`,
-    data: formattedData,
-  });
-};
