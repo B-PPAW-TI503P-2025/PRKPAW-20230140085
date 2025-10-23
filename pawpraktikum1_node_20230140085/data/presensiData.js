@@ -1,5 +1,4 @@
 const presensiRecords = [
-  // Kita bisa mulai dengan data contoh
   {
     userId: 456,
     nama: 'User Karyawan',
@@ -7,5 +6,4 @@ const presensiRecords = [
     checkOut: new Date('2025-10-14T17:00:00')
   }
 ];
-
 module.exports = presensiRecords;
