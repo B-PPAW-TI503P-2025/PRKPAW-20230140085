@@ -1,3 +1,4 @@
+
 1.Tampilan End Point Check-in:
    ![alt text](chek-in.jpg)
 3.Tampilan End Point Check-in lebih 1x:
@@ -9,4 +10,3 @@
 6.Tampilan End Point Report daily Karyawan:
    ![alt text](<report daily karyawan.jpg>)
 7.Tampilan End Point Report daily Admin:
-   ![alt text](<report daily admin.jpg>)
